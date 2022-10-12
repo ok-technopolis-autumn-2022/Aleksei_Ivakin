@@ -13,34 +13,36 @@
         <section class="mainView">
             <div class="inputField">
                 <button class="expandButton">
-                    arrow
+                    markAllTasks
                 </button>
                 <input class="newTaskInput" type="text" aria-label="Новая задача" placeholder="What needs to be done?">
             </div>
-            <div class="mainList">
-                <fieldset class="tasks">
+            <ul class="mainList" aria-label="Список задач">
+                <li>
                     <input type="checkbox" id="task" aria-label="Выполнение задачи">
                     <label for="task" aria-label="Задача">HTML</label>
-                    <input type="button" value="delete">
-                </fieldset>
-            </div>
+                    <input type="button" value="delete" aria-label="Удалить задачу">
+                </li>
+            </ul>
         </section>
         <section class="buttons">
             <div class="formatField">
-                <fieldset>
-                    <p class="countInfo">3 items left</p>
-                    <button class="selectAllButton" aria-label="Выбрать все задачи">
-                        All
-                    </button>
-                    <button class="selectActiveButton" aria-label="Выбрать активные задачи">
-                        Active
-                    </button>
-                    <button class="selectCompletedButton" aria-label="Выбрать выполненные задачи">
-                        Completed
-                    </button>
-                    <button class="clearCompletedButton" aria-label="Удалить выполненные задачи">
-                        Clear completed
-                    </button>
+                <fieldset role="group" aria-label="Кнопки действий">
+                    <p class="countInfo">3 items left <!--
+                    -->
+                        <button class="selectAllButton" aria-label="Выбрать все задачи">
+                            All
+                        </button>
+                        <button class="selectActiveButton" aria-label="Выбрать активные задачи">
+                            Active
+                        </button>
+                        <button class="selectCompletedButton" aria-label="Выбрать выполненные задачи">
+                            Completed
+                        </button>
+                        <button class="clearCompletedButton" aria-label="Удалить выполненные задачи">
+                            Clear completed
+                        </button>
+                    </p>
                 </fieldset>
             </div>
         </section>
