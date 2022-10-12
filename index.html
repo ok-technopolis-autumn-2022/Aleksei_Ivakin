@@ -19,30 +19,23 @@
             </div>
             <ul class="mainList" aria-label="Список задач">
                 <li>
-                    <input type="checkbox" id="task" aria-label="Выполнение задачи">
+                    <input type="checkbox" id="task" title="Выполнение задачи">
                     <label for="task" aria-label="Задача">HTML</label>
-                    <input type="button" value="delete" aria-label="Удалить задачу">
+                    <input type="button" value="delete" title="Удалить задачу">
                 </li>
             </ul>
         </section>
         <section class="buttons">
             <div class="formatField">
-                <fieldset role="group" aria-label="Кнопки действий">
-                    <p class="countInfo">3 items left <!--
-                    -->
-                        <button class="selectAllButton" aria-label="Выбрать все задачи">
-                            All
-                        </button>
-                        <button class="selectActiveButton" aria-label="Выбрать активные задачи">
-                            Active
-                        </button>
-                        <button class="selectCompletedButton" aria-label="Выбрать выполненные задачи">
-                            Completed
-                        </button>
-                        <button class="clearCompletedButton" aria-label="Удалить выполненные задачи">
-                            Clear completed
-                        </button>
-                    </p>
+                <p class="countInfo">3 items left</p>
+                <fieldset role="radiogroup" aria-label="Фильтр задач">
+                    <input type="radio" name="filter" class="selectAllButton" aria-label="Выбрать все задачи" checked>All
+                    <input type="radio" name="filter" class="selectActiveButton" aria-label="Выбрать активные задачи">Active
+                    <input type="radio" name="filter" class="selectCompletedButton"
+                           aria-label="Выбрать выполненные задачи">Completed
+                    <button class="clearCompletedButton" aria-label="Удалить выполненные задачи">
+                        Clear completed
+                    </button>
                 </fieldset>
             </div>
         </section>
