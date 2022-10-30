@@ -3,7 +3,6 @@
     --gray-light-color: #e6e6e6;
     --gray-color: #ccc;
     --gray-dark-color: #666;
-    --blue-demonstration-color: #005fcc;
 }
 
 * {
@@ -12,7 +11,7 @@
 }
 
 body {
-    color: #e6e6e6;
+    color: var(--gray-light-color);
     background-color: #f2f2f2;
     font-family: Roboto, system-ui;
     font-style: normal;
@@ -42,7 +41,7 @@ header {
 .title {
     position: relative;
     margin-bottom: 10%;
-    color: #ccc;
+    color: var(--gray-color);
     font-size: 100px;
     font-weight: 100;
     line-height: 21px;
@@ -52,7 +51,7 @@ header {
     position: relative;
     width: 562px;
     height: 402px;
-    background: #fff;
+    background: var(--white-color);
     box-shadow: 0 2px 4px #0003;
 }
 
@@ -80,8 +79,8 @@ header {
     display: flex;
     width: 100%;
     align-items: center;
-    border-bottom: 1px solid #e6e6e6;
-    box-shadow: inset 0 -1px 0 #E6E6E6;
+    border-bottom: 1px solid var(--gray-light-color);
+    box-shadow: inset 0 -1px 0 var(--gray-light-color);
 }
 
 .taskInput_selectAllButton {
@@ -98,7 +97,7 @@ header {
 }
 
 .taskInput_newTaskInput::placeholder {
-    color: #ccc;
+    color: var(--gray-color);
     font-style: italic;
 }
 
@@ -106,8 +105,8 @@ header {
     position: relative;
     padding: 12px 12px 12px 0;
     font-size: 24px;
-    color: #666;
-    box-shadow: inset 0 -1px 0 #e6e6e6;
+    color: var(--gray-dark-color);
+    box-shadow: inset 0 -1px 0 var(--gray-light-color);
     overflow: hidden;
 }
 
@@ -147,7 +146,7 @@ header {
 .task_Label {
     width: 38px;
     height: 38px;
-    border: 1px solid #e6e6e6;
+    border: 1px solid var(--gray-light-color);
     cursor: pointer;
     border-radius: 50%;
     flex-shrink: 0;
@@ -162,11 +161,11 @@ header {
 }
 
 .task_CheckButton:focus + .task_Label {
-    border: 1px solid #e6e6e6;
+    border: 1px solid var(--gray-light-color);
 }
 
 .task_CheckButton:checked ~ .task_Text {
-    color: #ccc;
+    color: var(--gray-color);
     text-decoration: line-through;
 }
 
@@ -176,8 +175,8 @@ header {
     width: 100%;
     display: flex;
     box-sizing: border-box;
-    box-shadow: inset 0 1px 0 #e6e6e6;
-    background-color: #fff;
+    box-shadow: inset 0 1px 0 var(--gray-light-color);
+    background-color: var(--white-color);
     justify-content: space-between;
     padding: 10px;
     font-size: 14px;
