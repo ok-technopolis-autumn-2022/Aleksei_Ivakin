@@ -3,6 +3,7 @@
     --gray-light-color: #e6e6e6;
     --gray-color: #ccc;
     --gray-dark-color: #666;
+    --gray-pink: #ebdfdf;
 }
 
 * {
@@ -53,6 +54,7 @@ header {
     height: 402px;
     background: var(--white-color);
     box-shadow: 0 2px 4px #0003;
+
 }
 
 .todoApp:after {
@@ -101,6 +103,11 @@ header {
     font-style: italic;
 }
 
+.list {
+    height: 300px;
+    overflow: auto;
+}
+
 .itemList {
     position: relative;
     padding: 12px 12px 12px 0;
@@ -132,7 +139,7 @@ header {
     margin-top: -99999px;
 }
 
-.itemList:hover .task_DeleteButton {
+.itemList:hover .task_DeleteButton, .task_DeleteButton:focus {
     margin-top: 0;
 }
 
@@ -161,7 +168,7 @@ header {
 }
 
 .task_CheckButton:focus + .task_Label {
-    border: 1px solid var(--gray-light-color);
+    border: 1px solid var(--gray-dark-color);
 }
 
 .task_CheckButton:checked ~ .task_Text {
@@ -183,6 +190,13 @@ header {
     align-items: center;
 }
 
+.buttons{
+    color: var(--gray-dark-color);
+    font-family: Roboto, system-ui;
+    font-style: normal;
+    font-weight: 300;
+}
+
 .chooseFormat {
     display: flex;
 }
@@ -193,7 +207,11 @@ header {
 }
 
 .chooseFormat_button:checked + .chooseFormat_buttonLabel {
-    border: 1px solid #ebdfdf;
+    border: 1px solid var(--gray-pink);
+}
+
+.chooseFormat_button:focus + .chooseFormat_buttonLabel{
+    outline:var(--gray-dark-color) auto 1px;
 }
 
 .chooseFormat_buttonLabel {
@@ -203,9 +221,14 @@ header {
 }
 
 .clearCompletedButton {
+    color: var(--gray-dark-color);
+    font-family: Roboto, system-ui;
+    font-style: normal;
+    font-weight: 300;
     cursor: pointer;
-    color: #888;
     font-size: 14px;
+    width: 125px;
+    height: 28px;
 }
 
 
