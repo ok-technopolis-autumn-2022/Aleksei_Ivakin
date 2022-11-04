@@ -3,40 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>todos</title>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 <div class="todo">
     <header>
-        <h1>TODOS</h1>
+        <h1 class="title">todos</h1>
     </header>
-    <main>
-        <section class="mainView">
-            <div class="inputField">
-                <button class="expandButton">
-                    markAllTasks
+    <main class="todoApp">
+        <section class="taskInput">
+            <div class="taskInput_inputField">
+                <button class="taskInput_selectAllButton" title="Выбрать все задачи">
+                    <img src="images/arrowDown.svg" alt="Arrow down">
                 </button>
-                <input class="newTaskInput" type="text" aria-label="Новая задача" placeholder="What needs to be done?">
+                <input class="taskInput_newTaskInput" type="text" aria-label="Ввести новую задачу"
+                       placeholder="What needs to be done?">
             </div>
-            <ul class="mainList" aria-label="Список задач">
-                <li>
-                    <input type="checkbox" id="task" title="Выполнение задачи">
-                    <label for="task" aria-label="Задача">HTML</label>
-                    <input type="button" value="delete" title="Удалить задачу">
+        </section>
+        <section class="list">
+            <ul class="tasksList" aria-label="Список задач">
+                <li class="itemList">
+                    <div class="itemList_task">
+                        <input class="task_CheckButton" type="checkbox" id="task" title="Выполнение задачи">
+                        <label class="task_Label" for="task" aria-label="Задача"></label>
+                        <span class="task_Text">HTML</span>
+                        <button class="task_DeleteButton" title="Удалить задачу">
+                            <img src="images/cross.svg" alt="Cross">
+                        </button>
+                    </div>
                 </li>
             </ul>
         </section>
         <section class="buttons">
             <div class="formatField">
-                <p class="countInfo">3 items left</p>
-                <fieldset role="radiogroup" aria-label="Фильтр задач">
-                    <input type="radio" name="filter" class="selectAllButton" aria-label="Выбрать все задачи" checked>All
-                    <input type="radio" name="filter" class="selectActiveButton" aria-label="Выбрать активные задачи">Active
-                    <input type="radio" name="filter" class="selectCompletedButton"
-                           aria-label="Выбрать выполненные задачи">Completed
+                <div>
+                    <label class="countInfo">1 items left</label>
+                </div>
+                <div class="chooseFormat" role="radiogroup">
+                    <input class="chooseFormat_button" id="sallb" type="radio" name="filter"
+                           aria-label="Выбрать все задачи" checked>
+                    <label class="chooseFormat_buttonLabel" for="sallb">All</label>
+                    <input class="chooseFormat_button" id="sactiveb" type="radio" name="filter"
+                           aria-label="Выбрать активные задачи">
+                    <label class="chooseFormat_buttonLabel" for="sactiveb">Active</label>
+                    <input class="chooseFormat_button" id="scomplb" type="radio" name="filter"
+                           aria-label="Выбрать выполненные задачи">
+                    <label class="chooseFormat_buttonLabel" for="scomplb">Completed</label>
+                </div>
+                <div>
                     <button class="clearCompletedButton" aria-label="Удалить выполненные задачи">
                         Clear completed
                     </button>
-                </fieldset>
+                </div>
             </div>
         </section>
     </main>

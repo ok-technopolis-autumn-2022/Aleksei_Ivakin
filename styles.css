@@ -1,0 +1,235 @@
+:root {
+    --white-color: #fff;
+    --gray-light-color: #e6e6e6;
+    --gray-color: #ccc;
+    --gray-dark-color: #666;
+    --gray-pink: #ebdfdf;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--gray-light-color);
+    background-color: #f2f2f2;
+    font-family: Roboto, system-ui;
+    font-style: normal;
+    font-weight: 300;
+}
+
+ul {
+    list-style-type: none;
+}
+
+input, button {
+    background-color: #0000;
+    border: 0;
+}
+
+header {
+    position: relative;
+    text-align: center;
+}
+
+.todo {
+    margin: 5% auto 0 auto;
+    max-width: 560px;
+    min-width: 460px;
+}
+
+.title {
+    position: relative;
+    margin-bottom: 10%;
+    color: var(--gray-color);
+    font-size: 100px;
+    font-weight: 100;
+    line-height: 21px;
+}
+
+.todoApp {
+    position: relative;
+    width: 562px;
+    height: 402px;
+    background: var(--white-color);
+    box-shadow: 0 2px 4px #0003;
+
+}
+
+.todoApp:after {
+    position: absolute;
+    height: 5px;
+    bottom: -10px;
+    left: 4px;
+    right: 4px;
+    content: "";
+    box-shadow: 0 2px 4px #0003;
+}
+
+.todoApp:before {
+    position: absolute;
+    bottom: -5px;
+    left: 2px;
+    right: 2px;
+    height: 5px;
+    content: "";
+    box-shadow: 0 2px 4px #0003;
+}
+
+.taskInput_inputField {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-bottom: 1px solid var(--gray-light-color);
+    box-shadow: inset 0 -1px 0 var(--gray-light-color);
+}
+
+.taskInput_selectAllButton {
+    cursor: pointer;
+    padding: 22px 18px;
+}
+
+.taskInput_newTaskInput {
+    flex: auto;
+    width: 100%;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 24px;
+    line-height: 64px;
+}
+
+.taskInput_newTaskInput::placeholder {
+    color: var(--gray-color);
+    font-style: italic;
+}
+
+.list {
+    height: 300px;
+    overflow: auto;
+}
+
+.itemList {
+    position: relative;
+    padding: 12px 12px 12px 0;
+    font-size: 24px;
+    color: var(--gray-dark-color);
+    box-shadow: inset 0 -1px 0 var(--gray-light-color);
+    overflow: hidden;
+}
+
+.itemList:hover {
+    background-color: #fafafa;
+}
+
+.itemList_task {
+    align-items: center;
+    display: flex;
+}
+
+.task_Text {
+    text-overflow: ellipsis;
+    flex: auto;
+    overflow: hidden;
+}
+
+.task_DeleteButton {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: -99999px;
+}
+
+.itemList:hover .task_DeleteButton, .task_DeleteButton:focus {
+    margin-top: 0;
+}
+
+.task_CheckButton {
+    height: 20px;
+    width: 20px;
+    flex-shrink: 0;
+    margin: 0 0 0 -30px;
+}
+
+.task_Label {
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--gray-light-color);
+    cursor: pointer;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin: 0 8px 0 22px;
+}
+
+.task_CheckButton:checked + .task_Label {
+    background-image: url("images/check.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #5dc2af;
+}
+
+.task_CheckButton:focus + .task_Label {
+    border: 1px solid var(--gray-dark-color);
+}
+
+.task_CheckButton:checked ~ .task_Text {
+    color: var(--gray-color);
+    text-decoration: line-through;
+}
+
+.formatField {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 0 var(--gray-light-color);
+    background-color: var(--white-color);
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 14px;
+    align-items: center;
+}
+
+.buttons{
+    color: var(--gray-dark-color);
+    font-family: Roboto, system-ui;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.chooseFormat {
+    display: flex;
+}
+
+.chooseFormat_button {
+    width: 0;
+    display: inline-block;
+}
+
+.chooseFormat_button:checked + .chooseFormat_buttonLabel {
+    border: 1px solid var(--gray-pink);
+}
+
+.chooseFormat_button:focus + .chooseFormat_buttonLabel{
+    outline:var(--gray-dark-color) auto 1px;
+}
+
+.chooseFormat_buttonLabel {
+    border: 1px solid #0000;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+.clearCompletedButton {
+    color: var(--gray-dark-color);
+    font-family: Roboto, system-ui;
+    font-style: normal;
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 14px;
+    width: 125px;
+    height: 28px;
+}
+
+
+
