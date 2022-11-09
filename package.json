@@ -1,0 +1,24 @@
+{
+  "name": "aleksei_ivakin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ok-technopolis-autumn-2022/Aleksei_Ivakin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ok-technopolis-autumn-2022/Aleksei_Ivakin/issues"
+  },
+  "homepage": "https://github.com/ok-technopolis-autumn-2022/Aleksei_Ivakin#readme",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
