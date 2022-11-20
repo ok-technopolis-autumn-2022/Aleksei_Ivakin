@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>todos</title>
     <link rel="stylesheet" href="input.scss"/>
+    <script src="index.js" defer></script>
 </head>
 <body>
 <div class="todo">
@@ -12,27 +13,16 @@
     </header>
     <main class="todoApp">
         <section class="taskInput">
-            <div class="taskInput_inputField">
+            <form action="#" method="post" class="taskInput_inputField">
                 <button class="taskInput_selectAllButton" title="Выбрать все задачи">
                     <img src="images/arrowDown.svg" alt="Arrow down">
                 </button>
                 <input class="taskInput_newTaskInput" type="text" aria-label="Ввести новую задачу"
-                       placeholder="What needs to be done?">
-            </div>
+                       id="newTaskText" placeholder="What needs to be done?">
+            </form>
         </section>
         <section class="list">
-            <ul class="tasksList" aria-label="Список задач">
-                <li class="itemList">
-                    <div class="itemList_task">
-                        <input class="task_CheckButton" type="checkbox" id="task" title="Выполнение задачи">
-                        <label class="task_Label" for="task" aria-label="Задача"></label>
-                        <span class="task_Text">HTML</span>
-                        <button class="task_DeleteButton" title="Удалить задачу">
-                            <img src="images/cross.svg" alt="Cross">
-                        </button>
-                    </div>
-                </li>
-            </ul>
+            <ul class="tasksList" aria-label="Список задач"></ul>
         </section>
         <section class="buttons">
             <div class="formatField">
