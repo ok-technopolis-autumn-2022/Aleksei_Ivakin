@@ -13,10 +13,10 @@
     </header>
     <main class="todoApp">
         <section class="taskInput">
+            <button class="taskInput_selectAllButton" title="Выбрать все задачи">
+                <img src="images/arrowDown.svg" alt="Arrow down">
+            </button>
             <form action="#" method="post" class="taskInput_inputField">
-                <button class="taskInput_selectAllButton" title="Выбрать все задачи">
-                    <img src="images/arrowDown.svg" alt="Arrow down">
-                </button>
                 <input class="taskInput_newTaskInput" type="text" aria-label="Ввести новую задачу"
                        id="newTaskText" placeholder="What needs to be done?">
             </form>
@@ -27,7 +27,7 @@
         <section class="buttons">
             <div class="formatField">
                 <div>
-                    <label class="countInfo">1 items left</label>
+                    <label class="countInfo">0 items left</label>
                 </div>
                 <div class="chooseFormat" role="radiogroup">
                     <input class="chooseFormat_button" id="sallb" type="radio" name="filter"
