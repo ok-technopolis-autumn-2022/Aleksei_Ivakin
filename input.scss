@@ -138,6 +138,9 @@ header {
   height: 40px;
   cursor: pointer;
   margin-top: -99999px;
+  background-image: url("images/cross.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .itemList:hover .task_DeleteButton, .task_DeleteButton:focus {

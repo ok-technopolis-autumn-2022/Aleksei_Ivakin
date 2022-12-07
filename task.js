@@ -3,14 +3,15 @@ import {showAllTasks, updateCounter} from "./buttons";
 
 export function addTask(e) {
     e.preventDefault();
-    if (this.newTaskText.value.length !== 0) {
-        const task = createTask(this.newTaskText.value);
+    const task_str = this.newTaskText.value.trim();
+    if (task_str.length !== 0) {
+        const task = createTask(task_str);
         const li = createLi(task);
         todo_app_data.ul.appendChild(li);
         todo_app_data.tasks.push(task);
         todo_app_data.tasks_li.push(li);
         updateCounter();
-        todo_app_data.all_button.click();
+        todo_app_data.all_button.checked = true;
         showAllTasks();
         this.reset();
     }
@@ -35,11 +36,6 @@ function createLi(task) {
     const input_id = task.id + 1;
     input.id = input_id;
     input.title = "Выполнение задачи";
-    const checkTask = () => {
-        task.isComplete = !task.isComplete;
-        updateCounter();
-    }
-    input.addEventListener('change', checkTask)
 
     const label = document.createElement('label');
     label.className = "task_Label";
@@ -54,20 +50,6 @@ function createLi(task) {
     button.className = "task_DeleteButton";
     button.title = "Удалить задачу";
 
-    const img = document.createElement('img');
-    img.alt = "Cross";
-    img.src = "http://localhost:1234/cross.b107c138.svg"
-
-    button.appendChild(img);
-    const deleteTask = () => {
-        button.removeEventListener('click', deleteTask);
-        todo_app_data.tasks_li =  todo_app_data.tasks_li.filter(task_li => task_li.id !== li.id);
-        todo_app_data.tasks =  todo_app_data.tasks.filter(task => task.id !== Number(li.id));
-        updateCounter();
-        li.remove();
-    }
-    button.addEventListener('click', deleteTask);
-
     itemList_task.append(input, label, span, button);
     li.appendChild(itemList_task);
 
@@ -76,8 +58,22 @@ function createLi(task) {
 
 function createTask(str) {
     return {
-        id: Date.now(),
+        id: String(Date.now()),
         text: str,
         isComplete: false
     }
+}
+
+export function checkTask(id) {
+    const task = todo_app_data.tasks.find(task => task.id === id);
+    task.isComplete = !task.isComplete;
+    updateCounter();
+}
+
+export function deleteTask(id) {
+    const li = todo_app_data.tasks_li.find(task_li => task_li.id === id);
+    todo_app_data.tasks_li = todo_app_data.tasks_li.filter(task_li => task_li.id !== id);
+    todo_app_data.tasks = todo_app_data.tasks.filter(task => task.id !== id);
+    li.remove();
+    updateCounter();
 }
