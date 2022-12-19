@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>todos</title>
     <link rel="stylesheet" href="input.scss"/>
+    <script src="index.js" defer></script>
 </head>
 <body>
 <div class="todo">
@@ -12,43 +13,32 @@
     </header>
     <main class="todoApp">
         <section class="taskInput">
-            <div class="taskInput_inputField">
-                <button class="taskInput_selectAllButton" title="Выбрать все задачи">
-                    <img src="images/arrowDown.svg" alt="Arrow down">
-                </button>
+            <button class="taskInput_selectAllButton" title="Выбрать все задачи">
+                <img src="images/arrowDown.svg" alt="Arrow down">
+            </button>
+            <form action="#" method="post" class="taskInput_inputField">
                 <input class="taskInput_newTaskInput" type="text" aria-label="Ввести новую задачу"
-                       placeholder="What needs to be done?">
-            </div>
+                       id="newTaskText" placeholder="What needs to be done?">
+            </form>
         </section>
         <section class="list">
-            <ul class="tasksList" aria-label="Список задач">
-                <li class="itemList">
-                    <div class="itemList_task">
-                        <input class="task_CheckButton" type="checkbox" id="task" title="Выполнение задачи">
-                        <label class="task_Label" for="task" aria-label="Задача"></label>
-                        <span class="task_Text">HTML</span>
-                        <button class="task_DeleteButton" title="Удалить задачу">
-                            <img src="images/cross.svg" alt="Cross">
-                        </button>
-                    </div>
-                </li>
-            </ul>
+            <ul class="tasksList" aria-label="Список задач"></ul>
         </section>
         <section class="buttons">
             <div class="formatField">
                 <div>
-                    <label class="countInfo">1 items left</label>
+                    <label class="countInfo">0 items left</label>
                 </div>
                 <div class="chooseFormat" role="radiogroup">
-                    <input class="chooseFormat_button" id="sallb" type="radio" name="filter"
+                    <input class="chooseFormat_button" id="js-sallb" type="radio" name="filter"
                            aria-label="Выбрать все задачи" checked>
-                    <label class="chooseFormat_buttonLabel" for="sallb">All</label>
-                    <input class="chooseFormat_button" id="sactiveb" type="radio" name="filter"
+                    <label class="chooseFormat_buttonLabel" for="js-sallb">All</label>
+                    <input class="chooseFormat_button" id="js-sactiveb" type="radio" name="filter"
                            aria-label="Выбрать активные задачи">
-                    <label class="chooseFormat_buttonLabel" for="sactiveb">Active</label>
-                    <input class="chooseFormat_button" id="scomplb" type="radio" name="filter"
+                    <label class="chooseFormat_buttonLabel" for="js-sactiveb">Active</label>
+                    <input class="chooseFormat_button" id="js-scomplb" type="radio" name="filter"
                            aria-label="Выбрать выполненные задачи">
-                    <label class="chooseFormat_buttonLabel" for="scomplb">Completed</label>
+                    <label class="chooseFormat_buttonLabel" for="js-scomplb">Completed</label>
                 </div>
                 <div>
                     <button class="clearCompletedButton" aria-label="Удалить выполненные задачи">

@@ -73,9 +73,12 @@ header {
     box-shadow: 0 2px 4px #0003;
   }
 }
+.taskInput{
+  display: flex;
+}
 
 .taskInput_inputField {
-  display: flex;
+  flex: auto;
   width: 100%;
   align-items: center;
   border-bottom: 1px solid $gray-light-color;
@@ -83,6 +86,7 @@ header {
 }
 
 .taskInput_selectAllButton {
+  flex: auto;
   cursor: pointer;
   padding: 22px 18px;
 }
@@ -134,6 +138,9 @@ header {
   height: 40px;
   cursor: pointer;
   margin-top: -99999px;
+  background-image: url("images/cross.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .itemList:hover .task_DeleteButton, .task_DeleteButton:focus {
